@@ -67,7 +67,7 @@ export const AppHeader = () => {
                     {option.data.label}
                 </Space>
             )}
-        />
+            />
 
         <Button type="primary" onClick={() => setDrawer(true)}>Add Asset</Button>
                 
@@ -75,8 +75,8 @@ export const AppHeader = () => {
             <CoinInfoModal coin={coin} />
         </Modal>
 
-        <Drawer width={600} title="Assets" onClose={() => setDrawer(false)} open={drawer}>
-            <AddAssetForm />        
+        <Drawer destroyOnClose={true} width={600} title="Assets" onClose={() => setDrawer(false)} open={drawer}>
+            <AddAssetForm onClose={() => setDrawer(false)}/>        
         </Drawer>
     </Layout.Header>
 };
